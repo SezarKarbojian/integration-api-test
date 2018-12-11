@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script >
+        $(document).ready(function() {
+            $('#example').DataTable( {
+                                         "ajax": {
+                                             "url": "https://integration-api-test.herokuapp.com/api/v1/paymentiq/transaction",
+                                             "dataSrc": ""
+                                         },
+                                         "columns": [
+                                             { "data": "userId" },
+                                             { "data": "txAmount" },
+                                             { "data": "txAmountCy" },
+                                             { "data": "txPspAmount" },
+                                             { "data": "txPspAmountCy" },
+                                             { "data": "fee" },
+                                             { "data": "feeCy" },
+                                             { "data": "txId" },
+                                             { "data": "txTypeId" },
+                                             { "data": "txName" },
+                                             { "data": "provider" },
+                                             { "data": "txRefId" }
+                                         ]
+                                     } );
+        } );
+    </script>
+    <title>Transaction History</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <table id="example" class="compact responsive table table-striped table-bordered" cellspacing="1" width="100%">
+            <thead>
+            <tr>
+                <th>userId</th>
+                <th>txAmount</th>
+                <th>txAmountCy</th>
+                <th>txPspAmount</th>
+                <th>txPspAmountCy</th>
+                <th>fee</th>
+                <th>feeCy</th>
+                <th>txId</th>
+                <th>txTypeId</th>
+                <th>txName</th>
+                <th>provider</th>
+                <th>txRefId</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</body>
+</html>
